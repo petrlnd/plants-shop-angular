@@ -1,42 +1,38 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# Зависимости
+node_modules/
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+# Сборка
+dist/
+tmp/
+out-tsc/
+bazel-out/
 
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
+# Кеш Angular CLI
+.angular/
+.sass-cache/
 
-# IDEs and editors
+# Логи
+*.log
+npm-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Тесты
+coverage/
+testem.log
+
+# Переменные окружения
+.env
+.env.local
+.env.*.local
+
+# IDE
 .idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
+*.iml
+.vscode/
+.history/
 *.sublime-workspace
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
-
-# System files
+# Системные файлы
 .DS_Store
 Thumbs.db
