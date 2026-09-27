@@ -1,21 +1,22 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {HeaderComponent} from "./shared/layout/header/header.component";
 import {LayoutComponent} from "./shared/layout/layout.component";
 import {MainComponent} from "./views/main/main.component";
 
 const routes: Routes = [
-  {path: '', component: LayoutComponent,
+  {
+    path: '', component: LayoutComponent,
     children: [
-      {path: '', component: MainComponent}
+      {path: '', component: MainComponent},
+      {path: '', loadChildren: () => import('./views/user/user.module').then(m => m.UserModule)},
     ]
   }
-
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
